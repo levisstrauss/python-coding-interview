@@ -28,13 +28,20 @@ Simple way of traversing and reversing a string
 
 """
 
-
 # Naive approach
 # def is_palindrome(word: str) -> bool:
 #     reverse_word = word[::-1]
 #     if reverse_word != word:
 #         return False
 #     return True
+
+"""
+The time complexity is O(n), where 𝑛 is the number of characters in the string. 
+However, our algorithm will only run (n/2) times, since two pointers are traversing
+ toward each other.
+ 
+ space  complexity is O(1) since we use constant space to store two indexs
+"""
 
 
 def is_palindrome(s):
@@ -50,12 +57,12 @@ def is_palindrome(s):
 
 # Driver Code
 def main():
-
     test_cases = ["RACEACAR", "A", "ABCDEFGFEDCBA",
                   "ABC", "ABCBA", "ABBA", "RACEACAR"]
     for i in range(len(test_cases)):
         print("Test Case #", i + 1)
         print("-" * 100)
-        print("The input string is '", test_cases[i], "' and the length of the string is ", len(test_cases[i]), ".", sep='')
+        print("The input string is '", test_cases[i], "' and the length of the string is ", len(test_cases[i]), ".",
+              sep='')
         print("Is it a palindrome?.....", is_palindrome(test_cases[i]))
         print("-" * 100)
