@@ -15,6 +15,29 @@ How to solve this problem:
 - if middle not finding mismatch, return True
 """
 
+"""
+Simple way of traversing and reversing a string 
+ 
+ - word[::-1]
+ - ".join(reversed("test")
+ - using for loop
+   reverse_test = ""
+   for char in word:
+     reverse_test = char + reversed_str
+    
+
+"""
+
+print(''.join(reversed("test")))
+
+
+# Naive approach
+# def is_palindrome(word: str) -> bool:
+#     reverse_word = word[::-1]
+#     if reverse_word != word:
+#         return False
+#     return True
+
 
 def is_palindrome(word: str) -> bool:
     # Initialization
@@ -29,5 +52,5 @@ def is_palindrome(word: str) -> bool:
     return True
 
 
-print(is_palindrome("abba"))   # True
+print(is_palindrome("abba"))  # True
 print(is_palindrome("abbas"))  # False
