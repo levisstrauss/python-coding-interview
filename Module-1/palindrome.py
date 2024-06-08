@@ -28,8 +28,6 @@ Simple way of traversing and reversing a string
 
 """
 
-print(''.join(reversed("test")))
-
 
 # Naive approach
 # def is_palindrome(word: str) -> bool:
@@ -39,18 +37,25 @@ print(''.join(reversed("test")))
 #     return True
 
 
-def is_palindrome(word: str) -> bool:
-    # Initialization
-    left, right = 0, len(word) - 1
-    # Check for the middle
+def is_palindrome(s):
+    left = 0
+    right = len(s) - 1
     while left < right:
-        # Compare them
-        if word[left] != word[right]:
+        if s[left] != s[right]:
             return False
-        # Increment them
-        left, right = left + 1, right - 1
+        left = left + 1
+        right = right - 1
     return True
 
 
-print(is_palindrome("abba"))  # True
-print(is_palindrome("abbas"))  # False
+# Driver Code
+def main():
+
+    test_cases = ["RACEACAR", "A", "ABCDEFGFEDCBA",
+                  "ABC", "ABCBA", "ABBA", "RACEACAR"]
+    for i in range(len(test_cases)):
+        print("Test Case #", i + 1)
+        print("-" * 100)
+        print("The input string is '", test_cases[i], "' and the length of the string is ", len(test_cases[i]), ".", sep='')
+        print("Is it a palindrome?.....", is_palindrome(test_cases[i]))
+        print("-" * 100)
